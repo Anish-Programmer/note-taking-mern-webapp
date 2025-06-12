@@ -66,6 +66,13 @@ yarn.lock
 .yarn-integrity
 .yarn/cache
 
+.backend/package-lock.json
+.backend/package.json
+
+
+backend/node_modules/.package-lock.json
+ackend/package-lock.json
+
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
