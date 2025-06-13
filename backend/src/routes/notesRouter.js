@@ -1,5 +1,5 @@
 import express from "express";
-import { createNote, deleteNote, getAllNotes, updateNote } from "../controllers/notesController.js";
+import { createNote, deleteNote, getAllNotes, getNoteById, updateNote } from "../controllers/notesController.js";
 // import { Router } from "express";
 
 // const notes = Router();
@@ -8,6 +8,8 @@ const router = express.Router();
 
 
 router.get("/",getAllNotes);
+
+router.get("/:id",getNoteById);
 
 
 router.post("/",createNote);

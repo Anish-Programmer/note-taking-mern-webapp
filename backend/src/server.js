@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json, urlencoded } from "express";
 import notesRoutes from "./routes/notesRouter.js";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
@@ -8,11 +8,16 @@ dotenv.config();
 
 const app= express();
 
+
 // console.log(process.env.MONGO_URI)
 
 const PORT = process.env.PORT || 5001;
 
 connectDB()
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 app.use("/api/notes", notesRoutes);
 
