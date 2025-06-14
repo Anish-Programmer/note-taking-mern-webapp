@@ -45,9 +45,3 @@ connectDB().then(()=>{
 
 
 
-
-
-
-
-
-// mongodb+srv://at7anish:GLb4v6J9YGpUMy7K@cluster0.vvdubiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
