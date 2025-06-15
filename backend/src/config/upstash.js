@@ -11,11 +11,11 @@ dotenv.config();
 // const { RateLimit } = pkg
 // const {Redis} = redisPkg
 
-// RateLimit: 5 req for 10 sec
+// RateLimit: 10 req for 20 sec
 // object of Ratelimt({})
 const rateLimit = new Ratelimit({
     redis: Redis.fromEnv(),
-    limiter: Ratelimit.slidingWindow(5, "10 s")
+    limiter: Ratelimit.slidingWindow(10, "20 s")
 })
 
 export default rateLimit;

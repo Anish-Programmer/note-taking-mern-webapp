@@ -1,4 +1,5 @@
 import express, { json, urlencoded } from "express";
+import cors from "cors";
 import notesRoutes from "./routes/notesRouter.js";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
@@ -16,6 +17,11 @@ const PORT = process.env.PORT || 5001;
 
 // connectDB()
 
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+    })
+)
 // middleware
 app.use(express.json()); // it will help to access req.body i.e fields e.g. title, content
 app.use(express.urlencoded({extended:true}));
