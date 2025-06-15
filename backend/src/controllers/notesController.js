@@ -35,7 +35,7 @@ export async function createNote(req,res){
        res.status(201).json(savedNote);
     } catch (error) {
        console.error("Error in create Note controller.",error);
-       res.satus(500).json({message: "Error in create note controller"})
+       res.status(500).json({message: "Error in create note controller"})
     }
 }
 

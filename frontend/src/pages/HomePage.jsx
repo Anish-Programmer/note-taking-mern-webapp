@@ -6,6 +6,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import RateLimitedUI from '../components/RateLimitedUI';
 import NoteCard from '../components/NoteCard';
+import api from '../lib/axios.js';
 
 
 
@@ -20,8 +21,8 @@ const HomePage = () => {
 
     const fetchAllNotes = async ()=>{
       try {
-        const res = await axios.get("http://localhost:5001/api/notes");
-        console.log(res.data);
+        const res = await api.get("/notes");
+        // console.log(res.data); debug
         setNotes(res.data.notes);
         // setNotes(res.data);
         // console.log(notes);
@@ -50,8 +51,10 @@ const HomePage = () => {
       <div className='max-w-7xl mx-auto p-4 mt-6 text-white'>
         {loading && <div className='text-center text-primary py-10'>Loading notes...</div> }
 
-        {console.log("Notes length:", notes.length)}
-{console.log("Is rate limited:", isRateLimited)}
+
+        {/* debug code */}
+        {/* {console.log("Notes length:", notes.length)} */}
+{/* {console.log("Is rate limited:", isRateLimited)} */}
 
 
         
